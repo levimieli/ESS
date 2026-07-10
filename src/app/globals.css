@@ -244,6 +244,24 @@
   .link-underline:hover {
     background-size: 100% 1.5px;
   }
+
+  .type-caret {
+    animation: caret-blink 0.9s steps(1, end) infinite;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @utility text-display {

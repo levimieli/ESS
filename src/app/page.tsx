@@ -12,10 +12,10 @@ export default function Home() {
       <Hero />
       <Intro />
       <ServicesSection />
-      <Approach />
+      <Approach titleType="type" />
       <Outcomes />
       <Testimonial />
-      <CtaBand />
+      <CtaBand titleType="type" />
     </>
   );
 }

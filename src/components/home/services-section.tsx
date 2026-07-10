@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
-import { Reveal, MaskHeading } from "@/components/site/reveal";
+import { Reveal } from "@/components/site/reveal";
+import { TypeHeading } from "@/components/site/type-heading";
 import { services, unsplash, type Service } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -32,9 +33,11 @@ function ServiceRow({ service, flip }: { service: Service; flip: boolean }) {
       {/* Copy */}
       <div className={cn(flip && "lg:order-1")}>
         <Reveal>
-          <h3 className="text-h3 font-display font-medium text-ink">
-            {service.title}
-          </h3>
+          <TypeHeading
+            as="h3"
+            text={service.title}
+            className="text-h3 font-display font-medium text-ink"
+          />
           <p className="measure mt-4 text-ink-soft">{service.summary}</p>
 
           <ul className="mt-7 space-y-3">
@@ -73,7 +76,7 @@ export function ServicesSection({
           <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="kicker mb-6">What we do</p>
-              <MaskHeading
+              <TypeHeading
                 as="h2"
                 text="Everything you need, under one standard."
                 className="text-h2 max-w-[16ch] font-display font-medium text-ink"

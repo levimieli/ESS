@@ -1,4 +1,5 @@
-import { Reveal, MaskHeading } from "@/components/site/reveal";
+import { Reveal } from "@/components/site/reveal";
+import { TypeHeading } from "@/components/site/type-heading";
 import { sectors } from "@/lib/site";
 
 export function Intro() {
@@ -8,7 +9,7 @@ export function Intro() {
         <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="kicker mb-6">Why Eternal Safety</p>
-            <MaskHeading
+            <TypeHeading
               as="h2"
               text="Compliance is the floor. We build for the people standing on it."
               className="text-h2 max-w-[18ch] font-display font-medium text-ink"

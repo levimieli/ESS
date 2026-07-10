@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { Reveal, MaskHeading } from "@/components/site/reveal";
+import { TypeHeading } from "@/components/site/type-heading";
 import { img, unsplash, site } from "@/lib/site";
 
 type CtaBandProps = {
@@ -9,6 +10,7 @@ type CtaBandProps = {
   sub?: string;
   imageId?: string;
   imageAlt?: string;
+  titleType?: "reveal" | "type";
 };
 
 export function CtaBand({
@@ -16,7 +18,9 @@ export function CtaBand({
   sub = "Book a no-obligation consultation. We'll walk a site, understand your risk, and show you exactly where you stand.",
   imageId = img.craneFlag.id,
   imageAlt = img.craneFlag.alt,
+  titleType = "reveal",
 }: CtaBandProps) {
+  const Heading = titleType === "type" ? TypeHeading : MaskHeading;
   return (
     <section className="relative overflow-hidden bg-graphite-deep text-onDark">
       <div aria-hidden="true" className="absolute inset-0 -z-0 opacity-30">
@@ -33,7 +37,7 @@ export function CtaBand({
       <div className="container-x relative py-24 sm:py-32">
         <div className="max-w-3xl">
           <p className="kicker kicker-on-dark mb-7">Book a consultation</p>
-          <MaskHeading
+          <Heading
             as="h2"
             text={heading}
             className="text-h2 font-display font-medium text-onDark"

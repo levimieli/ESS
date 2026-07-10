@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Reveal, RevealGroup, RevealItem, MaskHeading } from "@/components/site/reveal";
+import { TypeHeading } from "@/components/site/type-heading";
 import { approach, img, unsplash } from "@/lib/site";
 
-export function Approach() {
+export function Approach({ titleType = "reveal" }: { titleType?: "reveal" | "type" }) {
+  const Heading = titleType === "type" ? TypeHeading : MaskHeading;
   return (
     <section
       id="approach"
@@ -24,7 +26,7 @@ export function Approach() {
         <div className="grid gap-x-16 gap-y-8 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="kicker kicker-on-dark mb-6">How we work</p>
-            <MaskHeading
+            <Heading
               as="h2"
               text="A method, not a checklist."
               className="text-h2 max-w-[14ch] font-display font-medium text-onDark"
