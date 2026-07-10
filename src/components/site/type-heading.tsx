@@ -79,7 +79,7 @@ export function TypeHeading({
   const typing = animate && count < text.length;
 
   return (
-    <Tag ref={ref} aria-label={text} className={cn("relative", className)}>
+    <Tag ref={ref} aria-label={text} className={`relative ${className ?? ""}`}>
       {/* Reserves size; visible text for SSR / no-JS / reduced motion */}
       <span className={cn("block [text-wrap:normal]", animate && "invisible")}>
         {text}
