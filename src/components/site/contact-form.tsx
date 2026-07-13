@@ -69,7 +69,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="link-underline mt-2 text-sm font-medium text-muted"
+          className="link-underline mt-2 text-sm font-medium text-ink"
         >
           Send another enquiry
         </button>
@@ -85,8 +85,8 @@ export function ContactForm() {
     ) : null;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5" aria-label="Contact form">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4" aria-label="Contact form">
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label htmlFor="name" className="mb-2 text-ink">
             Name <span className="text-amber-deep">*</span>
@@ -114,7 +114,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <Label htmlFor="email" className="mb-2 text-ink">
             Email <span className="text-amber-deep">*</span>
@@ -174,7 +174,7 @@ export function ContactForm() {
           id="message"
           name="message"
           required
-          rows={5}
+          rows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           aria-invalid={!!errors.message}

@@ -83,7 +83,7 @@ export function ServicesSection({
               />
             </div>
             <Reveal>
-              <p className="measure-sm text-muted md:text-right">
+              <p className="measure-sm text-ink md:text-right">
                 Engaged individually or as a single, staged program — scoped to
                 your operation, your sites and your risk.
               </p>

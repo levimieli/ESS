@@ -84,7 +84,7 @@ export function Header() {
                           </span>
                           <span className="flex flex-col">
                             <span className="text-sm font-medium text-ink">{s.title}</span>
-                            <span className="text-xs leading-snug text-muted">{s.short}</span>
+                            <span className="text-xs leading-snug text-ink">{s.short}</span>
                           </span>
                         </Link>
                       ))}
@@ -191,7 +191,7 @@ export function Header() {
                   <Link
                     href={site.phoneHref}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 text-sm font-medium text-muted"
+                    className="flex items-center justify-center gap-2 text-sm font-medium text-ink"
                   >
                     <Phone className="size-4" aria-hidden="true" />
                     {site.phone}

@@ -138,9 +138,9 @@ export default async function ServiceDetailPage({
                 </span>
                 <span className="flex items-center gap-1.5 text-h3 font-display font-medium text-ink">
                   {s.title}
-                  <ArrowUpRight className="size-4 text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-amber-deep" aria-hidden="true" />
+                  <ArrowUpRight className="size-4 text-ink transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-amber-deep" aria-hidden="true" />
                 </span>
-                <span className="text-sm text-muted">{s.short}</span>
+                <span className="text-sm text-ink">{s.short}</span>
               </Link>
             ))}
           </div>

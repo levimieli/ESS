@@ -34,7 +34,7 @@ export function Testimonial() {
                 <span className="block font-medium text-ink">
                   {testimonial.name}
                 </span>
-                <span className="block text-sm text-muted">
+                <span className="block text-sm text-ink">
                   {testimonial.org}
                 </span>
               </span>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/site/contact-form";
-import { Reveal, MaskHeading } from "@/components/site/reveal";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,80 +11,55 @@ export const metadata: Metadata = {
 };
 
 const details = [
-  { icon: Phone, label: "Phone", value: site.phone, href: site.phoneHref },
-  { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
-  {
-    icon: MapPin,
-    label: "Servicing",
-    value: `${site.address.locality} & all of ${site.address.region}`,
-  },
-  { icon: Clock, label: "Response time", value: "Within one business day" },
+  { icon: Phone, label: site.phone, href: site.phoneHref },
+  { icon: Mail, label: site.email, href: `mailto:${site.email}` },
+  { icon: MapPin, label: `${site.address.locality} & all of NSW` },
 ];
 
 export default function ContactPage() {
   return (
-    <section className="bg-bg">
-      <div className="container-x pb-20 pt-32 sm:pb-28 sm:pt-40">
-        {/* Page heading — no hero */}
-        <div className="max-w-3xl">
+    <section className="flex min-h-[100svh] flex-col justify-center bg-bg pb-10 pt-24">
+      <div className="container-x grid items-center gap-x-16 gap-y-10 lg:grid-cols-[0.85fr_1.15fr]">
+        {/* Left — brief writing */}
+        <div>
           <p className="kicker mb-6">Contact</p>
-          <MaskHeading
-            as="h1"
-            trigger="mount"
-            text="Book a consultation."
-            className="text-h2 font-display font-medium text-ink"
-          />
-          <Reveal trigger="mount">
-            <p className="measure mt-6 text-lead text-ink-soft">
-              Tell us about your operation and we&apos;ll come back within one
-              business day. No obligation — just a clear next step toward a
-              safer, compliant business.
-            </p>
-          </Reveal>
+          <h1 className="text-h2 font-display font-medium text-ink">
+            Let&apos;s make it certain.
+          </h1>
+          <p className="measure mt-5 text-lead text-ink-soft">
+            Tell us about your operation and we&apos;ll come back within one
+            business day. No obligation — just a clear next step toward a safer,
+            compliant business.
+          </p>
+
+          <ul className="mt-9 space-y-4">
+            {details.map((d) => (
+              <li key={d.label} className="flex items-center gap-3.5">
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-md bg-surface-2 text-amber-deep">
+                  <d.icon className="size-5" aria-hidden="true" />
+                </span>
+                {d.href ? (
+                  <a
+                    href={d.href}
+                    className="link-underline font-medium text-ink"
+                  >
+                    {d.label}
+                  </a>
+                ) : (
+                  <span className="font-medium text-ink">{d.label}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-9 text-sm text-ink">
+            ABN {site.abn} · WHS Act 2011 (NSW) · ISO 45001 · SafeWork NSW
+          </p>
         </div>
 
-        <div className="mt-16 grid gap-x-16 gap-y-12 border-t border-line pt-14 lg:grid-cols-[0.85fr_1.15fr]">
-          {/* Details */}
-          <div>
-            <h2 className="text-h3 max-w-[16ch] font-display font-medium text-ink">
-              However you reach out, you&apos;ll speak to a practitioner — not a
-              call centre.
-            </h2>
-
-            <dl className="mt-10 space-y-6">
-              {details.map((d) => (
-                <div key={d.label} className="flex items-start gap-4">
-                  <span className="mt-0.5 inline-flex size-10 shrink-0 items-center justify-center rounded-md bg-surface-2 text-amber-deep">
-                    <d.icon className="size-5" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-                      {d.label}
-                    </dt>
-                    <dd className="mt-1 font-medium text-ink">
-                      {d.href ? (
-                        <a href={d.href} className="link-underline">
-                          {d.value}
-                        </a>
-                      ) : (
-                        d.value
-                      )}
-                    </dd>
-                  </div>
-                </div>
-              ))}
-            </dl>
-
-            <p className="mt-10 border-t border-line pt-6 text-sm text-muted">
-              ABN {site.abn} · Aligned to the WHS Act 2011 (NSW), ISO 45001 and
-              SafeWork NSW codes of practice.
-            </p>
-          </div>
-
-          {/* Form */}
-          <Reveal className="rounded-xl border border-line bg-surface p-6 sm:p-10">
-            <ContactForm />
-          </Reveal>
+        {/* Right — form */}
+        <div className="rounded-xl border border-line bg-surface p-6 sm:p-8">
+          <ContactForm />
         </div>
       </div>
     </section>

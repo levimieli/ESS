@@ -25,7 +25,7 @@ export function Intro() {
               </p>
             </Reveal>
             <Reveal transition={{ delay: 0.08 }}>
-              <p className="measure text-muted">
+              <p className="measure text-ink">
                 The result is a business that meets its duties under the WHS Act
                 2011, stands up to any SafeWork NSW inspection, and — most
                 importantly — sends every worker home the way they arrived.
@@ -37,7 +37,7 @@ export function Intro() {
         {/* Sectors */}
         <Reveal className="mt-16 border-t border-line pt-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-baseline sm:justify-between">
-            <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+            <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-ink">
               Trusted across
             </p>
             <ul className="flex flex-wrap gap-x-8 gap-y-3">

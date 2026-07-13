@@ -47,7 +47,7 @@ export default function AboutPage() {
                 supervisors, and building systems that hold up to both a SafeWork
                 NSW inspector and a busy Monday morning.
               </p>
-              <p className="text-muted">
+              <p className="text-ink">
                 Today we work with operators of every size across New South Wales,
                 from single-site trades to multi-site contractors preparing for
                 ISO 45001 certification.
@@ -99,7 +99,7 @@ export default function AboutPage() {
           {/* Sectors */}
           <Reveal className="mt-14 border-t border-line pt-8">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-baseline sm:justify-between">
-              <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+              <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-ink">
                 Sectors we serve
               </p>
               <ul className="flex flex-wrap gap-x-8 gap-y-3">
