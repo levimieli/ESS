@@ -7,9 +7,26 @@ import {
 import { Reveal, MaskHeading } from "@/components/site/reveal";
 import { faqs } from "@/lib/site";
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export function Faq() {
   return (
     <section className="section bg-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container-x">
         <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
