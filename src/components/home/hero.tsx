@@ -56,9 +56,8 @@ export function Hero() {
           animate="show"
           className="max-w-[46ch] text-balance font-display text-xl font-medium leading-relaxed text-onDark/90 sm:text-2xl sm:leading-relaxed"
         >
-          We audit, inspect and build the systems that keep your people safe and
-          your business compliant — from the first site walk through to
-          ISO&nbsp;45001 certification, right across New South Wales.
+          Work health &amp; safety, made certain — your people safe, your
+          business compliant, nothing left to chance.
         </motion.h1>
 
         <motion.button
