@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-graphite-deep text-center"
+      className="relative isolate flex min-h-[64svh] flex-col items-center justify-center overflow-hidden bg-graphite-deep px-6 text-center sm:min-h-[58svh]"
     >
       {/* Background */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 -z-10 scale-110">
@@ -48,11 +48,8 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_45%,oklch(0.158_0.012_246/0.35),transparent)]"
       />
 
-      {/* Content — statement in the upper-middle, scroll line filling down to the bottom */}
-      <div className="container-x relative flex min-h-[100svh] w-full flex-col items-center pb-8 pt-28">
-        {/* spacer lifts the statement slightly above centre */}
-        <div className="grow-[0.85]" aria-hidden="true" />
-
+      {/* Content — statement centred, with a compact scroll cue below it */}
+      <div className="container-x relative flex w-full flex-col items-center gap-9 py-24">
         <motion.h1
           variants={rise}
           initial="hidden"
@@ -64,24 +61,21 @@ export function Hero() {
           ISO&nbsp;45001 certification, right across New South Wales.
         </motion.h1>
 
-        {/* Scroll line — begins just below the statement, stretches almost to the bottom */}
-        <button
+        <motion.button
           type="button"
           onClick={scrollToNext}
           aria-label="Scroll to explore"
-          className="group mt-8 flex grow flex-col items-center text-white/70 transition-colors duration-300 hover:text-white"
+          variants={rise}
+          initial="hidden"
+          animate="show"
+          className="group inline-flex size-11 items-center justify-center rounded-full border border-white/25 text-white/70 transition-colors duration-300 hover:border-white/50 hover:text-white"
         >
-          <span
-            aria-hidden="true"
-            className="w-px flex-1 bg-white/40 transition-colors duration-300 group-hover:bg-white/75"
-          />
           <svg
             width="18"
             height="12"
             viewBox="0 0 18 12"
             fill="none"
             aria-hidden="true"
-            className="-mt-px"
           >
             <path
               d="M2 2.5 L9 9.5 L16 2.5"
@@ -91,7 +85,7 @@ export function Hero() {
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </motion.button>
       </div>
     </section>
   );
