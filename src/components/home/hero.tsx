@@ -30,8 +30,8 @@ export function Hero() {
       {/* Background */}
       <motion.div style={{ y: imageY }} className="absolute inset-0 -z-10 scale-110">
         <Image
-          src={unsplash(img.hardHatsFloor.id, 2400, 80)}
-          alt={img.hardHatsFloor.alt}
+          src={unsplash(img.heroSite.id, 2400, 80)}
+          alt={img.heroSite.alt}
           fill
           priority
           sizes="100vw"

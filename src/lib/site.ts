@@ -38,6 +38,10 @@ export function unsplash(id: string, w = 1600, q = 80) {
 }
 
 export const img = {
+  heroSite: {
+    id: "1584844654932-1b5c8b11fef1",
+    alt: "A large NSW civil worksite at first light, haze rising over earthworks and idle machinery.",
+  },
   siteWide: {
     id: "1577335029365-35029f68d093",
     alt: "Wide view of an active infrastructure site with cranes and graded roadways.",
@@ -271,7 +275,7 @@ export const values = [
 
 export const testimonial = {
   quote:
-    "Levi has been instrumental in supporting our WHS commitment through his expertise, professionalism, and proactive approach — strengthening our safety framework and fostering a positive safety culture across our projects.",
+    "Levi has been instrumental in supporting our WHS commitment through his expertise, professionalism, and proactive approach to WHS management. Beyond his technical skill, he's approachable and communicates clearly — fostering a positive safety culture across our projects.",
   name: "Client",
   org: "NSW builder",
 } as const;
