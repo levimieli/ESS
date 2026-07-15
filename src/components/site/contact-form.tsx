@@ -5,7 +5,7 @@ import { ArrowUpRight, Check, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { services } from "@/lib/site";
+import { services, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -45,7 +45,7 @@ export function ContactForm() {
       form.reset();
     } catch {
       setStatus("error");
-      setMessage("Something went wrong. Please call us on 1300 000 000.");
+      setMessage(`Something went wrong. Please call us on ${site.phone}.`);
     }
   }
 
@@ -61,8 +61,8 @@ export function ContactForm() {
         <p className="measure-sm text-ink-soft">
           A member of our team will be in touch within one business day to
           arrange your consultation. For anything urgent, call{" "}
-          <a href="tel:1300000000" className="link-underline font-medium text-ink">
-            1300 000 000
+          <a href={site.phoneHref} className="link-underline font-medium text-ink">
+            {site.phone}
           </a>
           .
         </p>

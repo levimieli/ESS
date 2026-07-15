@@ -10,10 +10,10 @@ export const site = {
   description:
     "Eternal Safety Solutions is a NSW work health & safety consultancy. We audit, inspect, and build WHS management systems that keep your people safe and your business compliant — from first site walk to ISO 45001 certification.",
   region: "New South Wales, Australia",
-  email: "hello@eternalsafetysolutions.com.au",
-  phone: "1300 000 000",
-  phoneHref: "tel:1300000000",
-  abn: "00 000 000 000",
+  email: "levi@eternalsafetysolutions.com.au",
+  phone: "0478 669 655",
+  phoneHref: "tel:0478669655",
+  abn: "59 385 498 929",
   address: {
     locality: "Sydney",
     region: "NSW",
@@ -61,10 +61,6 @@ export const img = {
   scaffoldWorker: {
     id: "1623002891503-fd1274ea9800",
     alt: "A worker in orange high-vis carrying out track work beneath tall scaffolding.",
-  },
-  welding: {
-    id: "1504917595217-d4dc5ebe6122",
-    alt: "Sparks arc from a grinder against a dark workshop — molten amber against graphite.",
   },
   workerBokeh: {
     id: "1614213951697-a45781262acf",
@@ -233,13 +229,6 @@ export const approach = [
  * Proof points
  * ------------------------------------------------------------------ */
 
-export const stats = [
-  { value: "15+", label: "years across NSW industry" },
-  { value: "600+", label: "site inspections completed" },
-  { value: "100%", label: "ISO 45001 certification rate" },
-  { value: "40+", label: "management systems built" },
-] as const;
-
 export const sectors = [
   "Construction",
   "Civil & Infrastructure",
@@ -270,8 +259,8 @@ export const values = [
 
 export const testimonial = {
   quote:
-    "Eternal Safety Solutions rebuilt our safety system from the ground up and walked us through ISO 45001 certification first time. Their audits are sharp, their advice is practical, and our teams actually use what they built.",
-  name: "Operations Director",
+    "Levi has been instrumental in supporting our WHS commitment through his expertise, professionalism, and proactive approach — strengthening our safety framework and fostering a positive safety culture across our projects.",
+  name: "Client",
   org: "NSW civil contractor",
 } as const;
 

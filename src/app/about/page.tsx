@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, RevealGroup, RevealItem, MaskHeading } from "@/components/site/reveal";
-import { Outcomes } from "@/components/home/outcomes";
 import { CtaBand } from "@/components/site/cta-band";
 import { img, unsplash, values, sectors } from "@/lib/site";
 
@@ -114,7 +113,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Outcomes />
       <CtaBand
         heading="Work with a team that gets it."
         sub="If you want safety that protects people first and passes audits as a matter of course, let's talk."
