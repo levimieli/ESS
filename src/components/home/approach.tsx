@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
 import { Reveal, RevealGroup, RevealItem, MaskHeading } from "@/components/site/reveal";
 import { TypeHeading } from "@/components/site/type-heading";
 import { approach, img, unsplash } from "@/lib/site";
+import { staggerSlow, lineGrow } from "@/lib/motion";
 
 export function Approach({ titleType = "reveal" }: { titleType?: "reveal" | "type" }) {
   const Heading = titleType === "type" ? TypeHeading : MaskHeading;
@@ -41,7 +45,10 @@ export function Approach({ titleType = "reveal" }: { titleType?: "reveal" | "typ
           </Reveal>
         </div>
 
-        <RevealGroup className="mt-16 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup
+          variants={staggerSlow}
+          className="mt-16 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {approach.map((item) => (
             <RevealItem
               key={item.step}
@@ -51,7 +58,11 @@ export function Approach({ titleType = "reveal" }: { titleType?: "reveal" | "typ
                 <span className="font-display text-4xl font-medium text-amber">
                   {item.step}
                 </span>
-                <span className="h-px w-8 bg-white/20 transition-all duration-500 group-hover:w-12 group-hover:bg-amber" />
+                <motion.span
+                  aria-hidden="true"
+                  variants={lineGrow}
+                  className="h-px w-8 origin-left bg-amber transition-[width] duration-500 group-hover:w-12"
+                />
               </div>
               <h3 className="text-h3 font-display font-medium text-onDark">
                 {item.title}

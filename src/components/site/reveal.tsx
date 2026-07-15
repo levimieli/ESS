@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, type HTMLMotionProps } from "motion/react";
+import { motion, useInView, type HTMLMotionProps, type Variants } from "motion/react";
 import { rise, stagger, easeOutExpo } from "@/lib/motion";
 
 type Trigger = "view" | "mount";
@@ -59,12 +59,18 @@ export function Reveal({ children, className, trigger = "view", ...props }: Reve
 }
 
 /** Container that staggers direct <RevealItem> children. */
-export function RevealGroup({ children, className, trigger = "view", ...props }: RevealProps) {
+export function RevealGroup({
+  children,
+  className,
+  trigger = "view",
+  variants = stagger,
+  ...props
+}: RevealProps & { variants?: Variants }) {
   const { ref, show } = useReveal<HTMLDivElement>(trigger);
   return (
     <motion.div
       ref={ref}
-      variants={stagger}
+      variants={variants}
       initial="hidden"
       animate={show ? "show" : "hidden"}
       className={className}

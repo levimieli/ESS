@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <PageHero
         kicker="Our Services"
         title="Safety, engineered end to end."
-        intro="Four disciplines that together take your business from uncertain to certified. Engage one, or run them as a single staged program scoped to your sites and risk."
+        intro="Every discipline that together takes your business from uncertain to certified. Engage one, or run them as a single staged program scoped to your sites and risk."
         imageId={img.scaffoldWorker.id}
         imageAlt={img.scaffoldWorker.alt}
       />

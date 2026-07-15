@@ -28,6 +28,24 @@ export const stagger: Variants = {
   },
 };
 
+/** Slower stagger for small groups where each step should read as its own beat. */
+export const staggerSlow: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.18, delayChildren: 0.1 },
+  },
+};
+
+/** Accent line that draws in left-to-right, used to mark a step as "arrived". */
+export const lineGrow: Variants = {
+  hidden: { scaleX: 0, opacity: 0 },
+  show: {
+    scaleX: 1,
+    opacity: 1,
+    transition: { duration: 0.5, ease: easeOutExpo, delay: 0.25 },
+  },
+};
+
 /** Single line/word inside a masked heading reveal. */
 export const maskLine: Variants = {
   hidden: { y: "110%" },
